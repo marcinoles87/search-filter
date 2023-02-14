@@ -7,7 +7,8 @@ const Search = () => {
         <div>
             <input  placeholder="search tag..."></input>
             {JSONDATA.map((val,key)=>{
-                return <div> {val.name} </div>
+                return <div>
+                    <li key={val.nick}>Name: {val.name} nick :{val.nick}</li></div>
 
             })}
         </div>
