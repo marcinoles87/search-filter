@@ -11,17 +11,22 @@ const Search = () => {
 
     handleText = (e) => {
         let word = e.target.value
-        console.log(word)
+        text = word
+        console.log(text)
+        if(word === text) {
+            return text
+        }
 
     }
 
     return ( 
         <div className='search-wrapper'>
-            <input onChange={handleText} placeholder="search tag..."></input>
-            {JSONDATA.map((val,key)=>{
+            <input onChange={handleText} placeholder="search tag..." ></input>
+            {JSONDATA.map((val,index)=>{
                 return <div>
-                    <li key={key.nick}>Name: {val.name} nick :{val.nick}</li></div>
-
+                    {text}
+                    <li key={index.id}>Name: {val.name} nick :{val.nick}</li></div>
+                        
             })}
         </div>
      );
