@@ -1,12 +1,16 @@
 .search-wrapper{
     
     width: 300px;
-    height: 400px;
+    height:auto;
     color: white;
     font-size: larger;
     margin: 20px;
-    background-color: rgb(49, 8, 86);
+    background-color: #310856;
     justify-content: center;
     text-align: center;
     border-radius: 20px;
+}
+
+li{
+    margin: 20px;
 }

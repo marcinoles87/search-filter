@@ -23,9 +23,10 @@ const Search = () => {
         <div className='search-wrapper'>
             <input onChange={handleText} placeholder="search tag..." ></input>
             {JSONDATA.map((val,index)=>{
+               
                 return <div>
-                    {text}
-                    <li key={index.id}>Name: {val.name} nick :{val.nick}</li></div>
+                    
+                    <li key={val.id}>Name: {val.name} nick :{val.nick} id:{val.id}</li></div>
                         
             })}
         </div>
