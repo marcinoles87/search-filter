@@ -9,24 +9,29 @@ const Search = () => {
 
     let [text,handleText] = useState('');
 
-    handleText = (e) => {
-        let word = e.target.value
-        text = word
-        console.log(text)
-        if(word === text) {
-            return text
-        }
-
-    }
+   
+    
 
     return ( 
         <div className='search-wrapper'>
-            <input onChange={handleText} placeholder="search tag..." ></input>
-            {JSONDATA.map((val,index)=>{
+            <input 
+                type={text} 
+                onChange={ (e) => 
+                    { handleText( e.target.value)}} 
+                placeholder="search tag..." ></input>
+
+            {JSONDATA.filter(
+                (val) => {
+                    if(text == ''){
+                        return val
+                    } else if( val.name.toLocaleLowerCase().includes(text.toLocaleLowerCase())){
+                        return val
+                    }
+                }
+            ).map((val,index)=>{
                
-                return <div>
+                return <li key={index}>Name: {val.name} nick :{val.nick} id:{val.id}</li>
                     
-                    <li key={val.id}>Name: {val.name} nick :{val.nick} id:{val.id}</li></div>
                         
             })}
         </div>
