@@ -15,10 +15,11 @@ const Search = () => {
     return ( 
         <div className='search-wrapper'>
             <input 
-                type={text} 
-                onChange={ (e) => 
-                    { handleText( e.target.value)}} 
-                placeholder="search tag..." ></input>
+                 
+                onChange={ (e) =>  { handleText( e.target.value)}} 
+                placeholder="search tag..." >
+
+                </input>
 
             {JSONDATA.filter(
                 (val) => {
